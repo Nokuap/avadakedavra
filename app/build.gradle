@@ -1,4 +1,4 @@
-apply plugin: 'com.android.application'
+apply plugin: 'com.android.library'
 apply plugin: 'maven'
 
 android {
@@ -6,7 +6,6 @@ android {
     buildToolsVersion "22.0.1"
 
     defaultConfig {
-        applicationId "com.dmitryzheltko.libtest"
         minSdkVersion 8
         targetSdkVersion 22
         versionCode 1
@@ -21,19 +20,21 @@ android {
 }
 
 repositories {
-    maven { url "https://github.com/Nokuap/avadakedavra/tree/master" }
+    mavenCentral()
+   // mavenRepo urls: 'https://github.com/Nokuap/avadakedavra'
+    maven { url "https://github.com/Nokuap/avadakedavra/raw/master" }
 }
 
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
     compile 'com.android.support:appcompat-v7:22.0.0'
-    //compile 'com.username:my-super-cool-sdk:1.0.0'
+    compile 'com.username:my-super-cool-sdk:1.0.0'
 }
 
 
 uploadArchives {
     repositories.mavenDeployer {
-        def deployPath = file("D:/Worskspace/LibTestMaven")
+        def deployPath = file("D:/Worskspace/LibTestMaven/")
         repository(url: "file://${deployPath.absolutePath}")
         pom.project {
             groupId 'com.username'
