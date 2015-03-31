@@ -1,4 +1,4 @@
-package com.dmitryzheltko.hello;
+package com.dmitryzheltko.df;
 
 import android.app.Application;
 import android.test.ApplicationTestCase;
